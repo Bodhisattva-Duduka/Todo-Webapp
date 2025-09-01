@@ -1,0 +1,141 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.todo-container {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 420px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.add-task {
+    display: flex;
+    margin-bottom: 22px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px 0 0 12px;
+    outline: none;
+    background: #334155;
+    color: #f1f5f9;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.add-task button {
+    padding: 12px 18px;
+    border: none;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0 12px 12px 0;
+    transition: background 0.25s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4),
+        -2px -2px 8px rgba(255, 255, 255, 0.05);
+}
+
+.add-task button:hover {
+    background: #2563eb;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    background: #273549;
+    padding: 14px 16px;
+    border-radius: 14px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4),
+        -2px -2px 8px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5),
+        -3px -3px 10px rgba(255, 255, 255, 0.07);
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #94a3b8;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 14px;
+    transition: all 0.2s ease;
+    color: transparent;
+}
+
+.checkbox.checked {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.task-title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #f1f5f9;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #f87171;
+    font-size: 22px;
+    margin-left: 12px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.delete-btn:hover {
+    color: #ef4444;
+    transform: scale(1.2);
+}
