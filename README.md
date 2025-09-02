@@ -96,7 +96,6 @@ http://localhost:5000
 
 ## 📸 Demo
 
-*(Add screenshots or GIFs of your app here once ready)*
 ![alt text](image.png)
 
 ---
