@@ -1,14 +1,17 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
+require('dotenv').config();
 
 const todoSchema = require('./models/Todo.js')
+const port = process.env.PORT || 3000;
+
 
 const app = express()
-const port = 3000
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/todo')
+
+mongoose.connect(`${process.env.MONGO_URI}todo`)
 
 app.use(express.static(path.join(__dirname, 'public')));
 
