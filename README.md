@@ -43,7 +43,7 @@ This app allows you to **add, edit, delete, and mark tasks as completed**, with 
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/Bodhisattva-Duduka/Todo-Webapp.git
-cd <Todo-Webapp>
+cd Todo-Webapp
 ````
 
 ### 2. Install dependencies
