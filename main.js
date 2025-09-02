@@ -50,6 +50,15 @@ app.patch('/api/patch/taskname', async (req, res) => {
     })
 })
 
+app.get('/api/gettasks', async (req,res)=>{
+    const dataArray = await todoSchema.find({})
+    const OBJ = {
+        'data' : dataArray
+    }
+
+    res.json(OBJ)
+})
+
 app.listen(port, () => {
     console.log(`listening on ${port}`)
 })

@@ -4,6 +4,8 @@ const taskList = document.getElementById("taskList");
 
 const url = window.location.origin
 
+document.addEventListener('DOMContentLoaded',renderTasks)
+
 function createTask(text, id, completed = false) {
     const task = document.createElement("div");
     task.classList.add("task");
@@ -66,6 +68,39 @@ function createTask(text, id, completed = false) {
     taskList.appendChild(task);
 }
 
+// fetch tasks
+
+async function fetchTasks() {
+    try {
+        const data = await fetch(`${url}/api/gettasks`)
+        const cleanedData = await data.json()
+        const arr = cleanedData.data
+        return arr
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+// render tasks
+
+async function renderTasks() {
+    try {
+        taskList.innerHTML = "";
+
+        const tasks = await fetchTasks();
+        if (!tasks || tasks.length === 0) {
+            taskList.innerHTML = `<p style="color: white;" >No tasks found</p>`;
+            return;
+        }
+
+        tasks.forEach(task => {
+            createTask(task.title, task.id, task.completed);
+        });
+    } catch (error) {
+        console.log("Error rendering tasks:", error);
+    }
+}
 
 addTaskBtn.addEventListener("click", async () => {
     const text = taskInput.value.trim();
@@ -107,6 +142,7 @@ async function postingTask(taskOBJ) {
 
         const data = await info.json()
         console.log(data)
+        await renderTasks()
     } catch (error) {
         console.log(error)
     }
@@ -126,6 +162,7 @@ async function deletingTask(taskOBJ) {
 
         const data = await info.json()
         console.log(data)
+        await renderTasks()
     } catch (error) {
         console.log(error)
     }
@@ -145,6 +182,7 @@ async function editingTask(taskOBJ) {
 
         const data = await info.json()
         console.log(data)
+        await renderTasks()
     } catch (error) {
         console.log(error)
     }
