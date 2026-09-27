@@ -25,14 +25,13 @@ function createTask(text, id, completed = false) {
             title: taskTitle.textContent,
             completed: isChecked
         };
-        await editingTask(textOBJ); // update backend when toggled
+        await editingTask(textOBJ);
     });
 
     const taskTitle = document.createElement("div");
     taskTitle.classList.add("task-title");
     taskTitle.textContent = text;
 
-    // Inline editing
     taskTitle.addEventListener("click", () => {
         taskTitle.setAttribute("contenteditable", "true");
         taskTitle.focus();
@@ -142,7 +141,6 @@ async function postingTask(taskOBJ) {
 
         const data = await info.json()
         console.log(data)
-        await renderTasks()
     } catch (error) {
         console.log(error)
     }
@@ -162,7 +160,6 @@ async function deletingTask(taskOBJ) {
 
         const data = await info.json()
         console.log(data)
-        await renderTasks()
     } catch (error) {
         console.log(error)
     }
@@ -182,7 +179,6 @@ async function editingTask(taskOBJ) {
 
         const data = await info.json()
         console.log(data)
-        await renderTasks()
     } catch (error) {
         console.log(error)
     }
