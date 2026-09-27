@@ -1,50 +1,54 @@
-# ✅ TODO WebApp
+# TODO WebApp
 
-A full-stack **To-Do Web Application** built using **Node.js, Express, MongoDB, and Vanilla JavaScript**.  
+A full-stack **To-Do Web Application** built using **Node.js, Express, MongoDB, and Vanilla JavaScript**.
+
 This app allows you to **add, edit, delete, and mark tasks as completed**, with full backend persistence.
 
 ---
 
-## 🚀 Features
+## Features
 
-- ➕ Add new tasks  
-- ✏️ Inline edit tasks (click to edit and save)  
-- ✅ Mark tasks as completed (toggle checkbox)  
-- ❌ Delete tasks  
-- 🔄 Auto-sync with backend (GET, POST, PATCH, DELETE)  
-- ⌨️ Press **Enter** to add tasks quickly  
+* Add new tasks
+* Inline edit tasks (click to edit and save)
+* Mark tasks as completed (toggle checkbox)
+* Delete tasks
+* Auto-sync with backend (GET, POST, PATCH, DELETE)
+* Press **Enter** to add tasks quickly
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
+```text
+TODO-WEBAPP
+
+┣ models
+┃ ┗ Todo.js            # Mongoose schema/model
+
+┣ public
+┃ ┣ index.html         # Frontend UI
+┃ ┣ script.js          # Frontend JS logic
+┃ ┗ style.css          # Styling
+
+┣ .env                 # Environment variables
+┣ .gitignore
+┣ main.js              # Express backend entry point
+┣ package.json
+┣ package-lock.json
+┗ README.md
 ```
 
-📦 TODO-WEBAPP
-┣ 📂 models
-┃ ┗ 📜 Todo.js            # Mongoose schema/model
-┣ 📂 public
-┃ ┣ 📜 index.html         # Frontend UI
-┃ ┣ 📜 script.js          # Frontend JS logic
-┃ ┗ 📜 style.css          # Styling
-┣ 📜 .env                 # Environment variables
-┣ 📜 .gitignore
-┣ 📜 main.js              # Express backend entry point
-┣ 📜 package.json
-┣ 📜 package-lock.json
-┗ 📜 README.md
-
-````
-
 ---
 
-## ⚙️ Setup & Usage
+## Setup & Usage
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/Bodhisattva-Duduka/Todo-Webapp.git
+
 cd Todo-Webapp
-````
+```
 
 ### 2. Install dependencies
 
@@ -56,6 +60,7 @@ npm install
 
 ```env
 PORT=5000
+
 MONGO_URI=your_mongodb_connection_string
 ```
 
@@ -67,10 +72,9 @@ node main.js
 
 Server runs on:
 
-```
+```text
 http://localhost:5000
 ```
-
 
 ### Example Task Object
 
@@ -84,7 +88,7 @@ http://localhost:5000
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend:** HTML, CSS, JavaScript (Vanilla JS)
 * **Backend:** Node.js, Express.js
@@ -92,10 +96,6 @@ http://localhost:5000
 
 ---
 
-
-
-## 📸 Demo
+## Demo
 
 ![alt text](image.png)
-
----

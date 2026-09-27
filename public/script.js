@@ -104,8 +104,11 @@ async function renderTasks() {
 addTaskBtn.addEventListener("click", async () => {
     const text = taskInput.value.trim();
     if (text !== "") {
+        const noTasksMsg = taskList.querySelector("p");
+        if (noTasksMsg) noTasksMsg.remove();
+
         const taskId = Date.now().toString();
-        createTask(text, taskId, false); // default unchecked
+        createTask(text, taskId, false);
         taskInput.value = "";
 
         const textOBJ = {
